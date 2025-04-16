@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #000;
+  color: #fff;
+  font-family: 'Orbitron', sans-serif;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+/* Particle Background */
+.particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0.3;
+}
+
+/* Animated Title */
+.title {
+  text-align: center;
+  padding: 20px;
+  font-size: 32px;
+  color: #ff1744;
+  text-shadow: 
+    0 0 10px #ff1744,
+    0 0 20px #ff1744,
+    0 0 30px #ff1744,
+    0 0 40px #ff0000;
+  animation: glow 2s ease-in-out infinite alternate;
+  letter-spacing: 2px;
+  font-weight: bold;
+  transform: perspective(500px) rotateX(10deg);
+}
+
+/* Video Player Area */
+.video-player {
+  width: 80%;
+  height: 60vh;
+  margin: 20px auto;
+  border: 2px solid rgba(255, 23, 68, 0.5);
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.5);
+  box-shadow: 
+    0 0 20px rgba(255, 23, 68, 0.2),
+    inset 0 0 50px rgba(255, 23, 68, 0.1);
+  backdrop-filter: blur(5px);
+  transform: perspective(1000px) rotateX(2deg);
+  transition: transform 0.3s ease;
+}
+
+.video-player:hover {
+  transform: perspective(1000px) rotateX(0deg) scale(1.02);
+}
+
+/* MVP Carousel */
+.mvp-carousel {
+  position: relative;
+  width: 100%;
+  height: 150px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 10px;
+}
+
+.mvp-card {
+  flex: 0 0 100px;
+  text-align: center;
+  animation: float 3s ease-in-out infinite;
+}
+
+.avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 3px solid #2196f3;
+  box-shadow: 
+    0 0 15px rgba(33, 150, 243, 0.5),
+    inset 0 0 20px rgba(33, 150, 243, 0.3);
+  margin: 0 auto 10px;
+  background: linear-gradient(135deg, #002fff, #00b8ff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: white;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  transition: all 0.3s ease;
+  transform-style: preserve-3d;
+}
+
+.avatar:hover {
+  transform: scale(1.1) rotate(5deg);
+  border-color: #64b5f6;
+  box-shadow: 
+    0 0 25px rgba(33, 150, 243, 0.7),
+    inset 0 0 30px rgba(33, 150, 243, 0.5);
+}
+
+/* Floating Mic Button */
+.mic-button {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #ff1744, #d50000);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 
+    0 0 20px rgba(255, 23, 68, 0.6),
+    inset 0 0 15px rgba(255, 255, 255, 0.2);
+  animation: pulse 2s infinite;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.mic-button:hover {
+  transform: scale(1.1);
+  box-shadow: 
+    0 0 30px rgba(255, 23, 68, 0.8),
+    inset 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+.mic-icon {
+  font-size: 24px;
+  color: white;
+  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
+}
+
+/* Animations */
+@keyframes glow {
+  from {
+    text-shadow: 
+      0 0 10px #ff1744,
+      0 0 20px #ff1744,
+      0 0 30px #ff1744;
+    filter: brightness(1);
+  }
+  to {
+    text-shadow: 
+      0 0 20px #ff1744,
+      0 0 30px #ff1744,
+      0 0 40px #ff1744,
+      0 0 50px #ff0000;
+    filter: brightness(1.2);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 
+      0 0 20px rgba(255, 23, 68, 0.6),
+      inset 0 0 15px rgba(255, 255, 255, 0.2);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 
+      0 0 40px rgba(255, 23, 68, 0.8),
+      inset 0 0 25px rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+  }
+  100% {
+    box-shadow: 
+      0 0 20px rgba(255, 23, 68, 0.6),
+      inset 0 0 15px rgba(255, 255, 255, 0.2);
+    transform: scale(1);
+  }
+}
